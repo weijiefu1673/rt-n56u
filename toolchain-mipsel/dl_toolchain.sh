@@ -9,6 +9,11 @@ if [ -d $DIR ]; then
 	exit
 fi
 
-curl -O -L $DL_URL && \
-mkdir -p $DIR && \
-tar -xvf $DL_NAME -C $DIR
+if [ ! -f $DL_NAME ]; then
+	curl -O -L $DL_URL && \
+	mkdir -p $DIR && \
+	tar -xvf $DL_NAME -C $DIR
+else
+	mkdir -p $DIR && \
+	tar -xvf $DL_NAME -C $DIR
+fi
