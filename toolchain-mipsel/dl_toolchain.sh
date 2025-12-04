@@ -14,6 +14,7 @@ if [ ! -f $DL_NAME ]; then
 	mkdir -p $DIR && \
 	tar -xvf $DL_NAME -C $DIR
 else
+	echo "$DL_NAME exists!"
 	mkdir -p $DIR && \
 	tar -xvf $DL_NAME -C $DIR
 fi
